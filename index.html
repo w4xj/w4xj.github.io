@@ -7,8 +7,8 @@
 		font-size:20px;
 	}
 	.btn{
-		width:60px;
-		margin-left:150px;
+		width:100px;
+		margin-left:50px;
 	}
 	.buy{
 		color:green;
@@ -28,7 +28,8 @@
 &nbsp;&nbsp;个数：<input type="text" id="gs" value="1" class="style "/><br>
 &nbsp;&nbsp;利润：<input type="text" id="lr" class="lr style"/><br>
 利润率：<input type="text" id="lrl" class="lrl style"/><br>
-<button onclick = "calc();" class="style btn">计算</button><br>
+<button onclick = "calc();" class="style btn">计算盈利</button>
+<button onclick = "calckeep();" class="style btn">计算保本</button><br>
 </body>
 <script>
 function calc(){
@@ -41,6 +42,16 @@ function calc(){
 	document.getElementById("lrl").value = lrl;
 	document.getElementById("lr").value = lr;
 	
+}
+
+function calckeep(){
+	var gs = parseFloat(document.getElementById("gs").value);
+	var sx = parseFloat(document.getElementById("sx").value);
+	var buy = parseFloat(document.getElementById("buy").value);
+	var sell = buy/((1 - sx) * (1 - sx))
+	document.getElementById("sell").value = sell;
+	document.getElementById("lrl").value = "≈0";
+	document.getElementById("lr").value = "≈0";
 }
 </script>
 <html>
