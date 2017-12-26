@@ -1,1 +1,46 @@
-Welcome to w4xj's zone !!!
+ <!DOCTYPE html>  
+<html>
+<head>
+<style>
+	.style{
+		height:30px;
+		font-size:20px;
+	}
+	.btn{
+		width:60px;
+		margin-left:150px;
+	}
+	.buy{
+		color:green;
+	}
+	.sell{
+		color:red;
+	}
+	.lr{
+		color:blue;
+	}
+</style>
+</head>
+<body style="font-size:30px">
+手续率：<input type="text" id="sx" value="0.002" class="style "/><br>
+&nbsp;&nbsp;&nbsp;&nbsp;买：<input type="text" id="buy" class="buy style"/><br>
+&nbsp;&nbsp;&nbsp;&nbsp;卖：<input type="text" id="sell" class="sell style"/><br>
+&nbsp;&nbsp;个数：<input type="text" id="gs" value="1" class="style "/><br>
+&nbsp;&nbsp;利润：<input type="text" id="lr" class="lr style"/><br>
+利润率：<input type="text" id="lrl" class="lrl style"/><br>
+<button onclick = "calc();" class="style btn">计算</button><br>
+</body>
+<script>
+function calc(){
+	var gs = parseFloat(document.getElementById("gs").value);
+	var sx = parseFloat(document.getElementById("sx").value);
+	var buy = parseFloat(document.getElementById("buy").value);
+	var sell = parseFloat(document.getElementById("sell").value);
+	var lr = (sell * (1 - sx) * (1 - sx) - buy) * gs;
+	var lrl = (lr / buy * gs) * 100 + "%";
+	document.getElementById("lrl").value = lrl;
+	document.getElementById("lr").value = lr;
+	
+}
+</script>
+<html>
