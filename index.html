@@ -41,12 +41,11 @@ function calc(){
 	var buy = parseFloat(document.getElementById("buy").value);
 	var sell = parseFloat(document.getElementById("sell").value);
 	var lr = (sell * (1 - sx) * (1 - sx) - buy) * gs;
-	var lrl = (lr / buy * gs) * 100 + "%";
-	document.getElementById("lrl").value = "≈"+lrl;
-	document.getElementById("lr").value = "≈"+lr;
+	var lrl = (lr / (buy * gs)) * 100 + "%";
+	document.getElementById("lrl").value = lrl;
+	document.getElementById("lr").value = lr;
 	
 }
-
 function calckeep(){
 	var gs = parseFloat(document.getElementById("gs").value);
 	var sx = parseFloat(document.getElementById("sx").value);
