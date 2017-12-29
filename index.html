@@ -10,8 +10,14 @@
 		width:100px;
 		margin-left:50px;
 	}
+	label{
+		width:120px;
+		float:left;
+	}
 	input{
+		
 		width:280px;
+		left:200px;
 	}
 	.buy{
 		color:green;
@@ -22,15 +28,15 @@
 	.lr{
 		color:blue;
 	}
-</style>
+</style
 </head>
 <body style="font-size:30px">
-手续率：<input type="text" id="sx" value="0.002" class="style "/><br>
-&nbsp;&nbsp;&nbsp;&nbsp;买：<input type="text" id="buy" class="buy style"/><br>
-&nbsp;&nbsp;&nbsp;&nbsp;卖：<input type="text" id="sell" class="sell style"/><br>
-&nbsp;&nbsp;个数：<input type="text" id="gs" value="1" class="style "/><br>
-&nbsp;&nbsp;利润：<input type="text" id="lr" class="lr style"/><br>
-利润率：<input type="text" id="lrl" class="lrl style"/><br>
+<label >手续率：</label> <input type="text" id="sx" value="0.002" class="style "/><br>
+<label >买：</label> <input type="text" id="buy" class="buy style"/><br>
+<label >卖：</label><input type="text" id="sell" class="sell style"/><br>
+<label >个数：</label><input type="text" id="gs" value="1" class="style "/><br>
+<label >利润：</label><input type="text" id="lr" class="lr style"/><br>
+<label >利润率：</label><input type="text" id="lrl" class="lrl style"/><br>
 <button onclick = "calc();" class="style btn">计算盈利</button>
 <button onclick = "calckeep();" class="style btn">计算保本</button><br>
 </body>
@@ -42,9 +48,8 @@ function calc(){
 	var sell = parseFloat(document.getElementById("sell").value);
 	var lr = (sell * (1 - sx) * (1 - sx) - buy) * gs;
 	var lrl = (lr / (buy * gs)) * 100;
-	document.getElementById("lrl").value = "≈" + lrl.toFixed(8)+ "%";
-	document.getElementById("lr").value = "≈" + lr.toFixed(8);
-	
+	document.getElementById("lrl").value = lrl.toFixed(8)+ "%";
+	document.getElementById("lr").value = lr.toFixed(8);	
 }
 function calckeep(){
 	var gs = parseFloat(document.getElementById("gs").value);
