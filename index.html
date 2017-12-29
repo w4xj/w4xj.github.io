@@ -42,8 +42,8 @@ function calc(){
 	var sell = parseFloat(document.getElementById("sell").value);
 	var lr = (sell * (1 - sx) * (1 - sx) - buy) * gs;
 	var lrl = (lr / (buy * gs)) * 100;
-	document.getElementById("lrl").value = lrl.toFixed(8)+ "%";
-	document.getElementById("lr").value = lr.toFixed(8);
+	document.getElementById("lrl").value = "≈" + lrl.toFixed(8)+ "%";
+	document.getElementById("lr").value = "≈" + lr.toFixed(8);
 	
 }
 function calckeep(){
